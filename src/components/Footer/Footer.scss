@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #{$cream};
+    opacity: 0.8;
+    &_text-p {
+        font-family: #{$font-text};
+        font-size: 14px;
+        word-spacing: -0.2rem;
+        margin-left: 0.8rem;
+    }
+    &_links{
+        margin-top: 0.6rem;
+        padding-right: 1.5rem;
+        .icon-gmail{
+            width: 25px;
+            height: 25px;
+            margin-right: 0.3rem;
+
+        }
+        .icon-linkedin{
+            width: 25px;
+            height: 25px;
+        }
+    }
+    
+}

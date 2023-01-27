@@ -1,6 +1,6 @@
 import * as React from "react";
 import Logo from "../../Img/logo__camera.png";
-import './Header.scss'
+
 
 const Header = () => {
   return (

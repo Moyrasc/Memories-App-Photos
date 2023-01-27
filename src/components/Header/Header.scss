@@ -1,0 +1,24 @@
+@import '../../styles/variables.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #F5DFC9;
+    &_logo{
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+    }
+    .logo{
+        width: 100px;
+        height: 50px;
+    }
+    &_title{
+        margin-right: 1rem;
+        &-h1{
+            font-family: #{$font-title};
+            font-size: 1.7rem;
+            letter-spacing: 1.2px;
+        }
+    }
+}

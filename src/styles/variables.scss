@@ -1,0 +1,12 @@
+$cream: #F5DFC9;
+$black: #000000;
+$font-title:'Whisper', cursive;
+$font-text:'Roboto Mono', monospace;
+
+:root {
+  --cream: #{$cream};
+  --black: #{$black};
+  --font-title: #{$font-title};
+  --font-text: #{$font-text};
+
+}

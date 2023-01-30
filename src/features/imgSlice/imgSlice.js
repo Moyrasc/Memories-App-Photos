@@ -30,3 +30,7 @@ export const imgSlice = createSlice({
         })
     }
 })
+
+export const selectImage = (state) => state.apiCall.images
+export const selectStatusImage = (state) => state.apiCall.status
+export default imgSlice.reducer

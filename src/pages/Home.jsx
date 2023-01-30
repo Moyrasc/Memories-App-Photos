@@ -14,7 +14,7 @@ function srcset(image, width, height, rows = 1, cols = 1) {
     }&fit=crop&auto=format&dpr=2 2x`,
   };
 }
-const Search = () =>{
+const Home = () =>{
 
     return(
         <>
@@ -101,4 +101,4 @@ const itemData = [
   },
 
 ];
-export default Search;
+export default Home;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import SearchBar from "./components/SearchBar/SearchBar";
@@ -14,9 +14,11 @@ function App() {
       <Header />
       <SearchBar/>
       <main className="main-container">
-        <Routes></Routes>
+        <Routes>
+          <Route path="/" element={<Home/>}></Route>
+        </Routes>
         
-        <Home/>
+        
       </main>
       <Footer />
     </div>

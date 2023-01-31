@@ -5,8 +5,7 @@ const initialState = {
     images: [],
     status: 'null'
 }
-
-export const apiPhotos = createAsyncThunk(
+export const apiGetPhotos = createAsyncThunk(
     'search/apiCall',
     async(query) => {
         return await apiCall(query)
@@ -18,14 +17,14 @@ export const imgSlice = createSlice({
     initialState,
     extraReducers: (builder) => {
         builder
-        .addCase(apiPhotos.pending, state => {
+        .addCase(apiGetPhotos.pending, state => {
             state.status = 'loading'
         })
-        .addCase(apiPhotos.fulfilled, (state,action) =>{
+        .addCase(apiGetPhotos.fulfilled, (state,action) =>{
             state.status = 'fulfilled'
             state.images = action.payload
         })
-        .addCase(apiPhotos.rejected, state =>{
+        .addCase(apiGetPhotos.rejected, state =>{
             state.status = 'error'
         })
     }

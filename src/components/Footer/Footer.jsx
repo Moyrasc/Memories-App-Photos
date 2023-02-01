@@ -9,8 +9,8 @@ const Footer = () => {
                 <p className="footer_text-p"> &copy; 2023 Memories - Noe Sola </p>
             </div>
             <div className="footer_links">
-                <img src={iconGmail} alt="gmail icon" className="icon-gmail"/>
-                <img src={iconLinkedin} alt="Linkedin icon" className="icon-linkedin"/>
+                <a href="mailto:noemisolac@gmail.com"><img src={iconGmail} alt="gmail icon" className="icon-gmail"/></a>
+                <a href="https://www.linkedin.com/in/noe-sola/"><img src={iconLinkedin} alt="Linkedin icon" className="icon-linkedin"/></a>
             </div>
         </footer>
     )

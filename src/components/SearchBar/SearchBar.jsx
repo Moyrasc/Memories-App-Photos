@@ -9,11 +9,22 @@ const SearchBar = () => {
 
     const handleOnKeyDown = (e) =>{
         if(e.key=== 'Enter'){
+          if(queries === ''){
+            dispatch(apiGetPhotos())
+          }else {
             dispatch(apiGetPhotos(queries))
+          }
+            
         }
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // dispatch(apiGetPhotos(queries))
+        // setQueries('');
     }
   return (
     <div className="input-container">
+      <form onSubmit={handleSubmit}>
       <input
         className="inputSearch"
         placeholder="Search photos"
@@ -22,6 +33,7 @@ const SearchBar = () => {
         onChange={e => setQueries(e.target.value)}
         onKeyDown={handleOnKeyDown}
       />
+      </form>
       <SearchSharpIcon className="input-icon"/>
     </div>
   );

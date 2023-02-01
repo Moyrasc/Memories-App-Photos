@@ -1,30 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import IconButton from "@mui/material/IconButton";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
+import { useDispatch} from "react-redux";
+import {  toggleFav } from "../../features/favSlice/favSlice";
 
 
 const ImageLists = ({photos}) => {
- 
+    const dispatch = useDispatch()
+    const handleFavorite = (photo) => {
+        const data = {
+            id: photo.id,
+            description: photo.alt_description,
+            width: photo.width,
+            height: photo.height,
+            likes: photo.likes,
+            urls: {
+                full: photo.urls.full,
+                thumb: photo.urls.thumb
+            },
+            date: new Date().getTime().toString()
+        }
+        
+        dispatch(toggleFav(data))
 
-    // const addMyFavorite = (photo) => {
-    //     const data = {
-    //         id: photo.id,
-    //         description: photo.alt_description,
-    //         width: photo.width,
-    //         height: photo.height,
-    //         likes: photo.likes,
-    //         urls: {
-    //             full: photo.urls.full,
-    //             thumb: photo.urls.thumb
-    //         },
-    //         date: new Date().getTime().toString()
-    //     }
-    //     dispatch(addFav(data))
-
-    // }
+    }
     return (
         <ImageList sx={{ width: 320, height: 600 }}>
 
@@ -42,7 +44,7 @@ const ImageLists = ({photos}) => {
                         title={photo.title}
                         actionIcon={
 
-                            <IconButton onClick={()=>console.log(photo)}>
+                            <IconButton onClick={()=>handleFavorite(photo)}>
                                 <StarBorderIcon style={{ color: "white" }} />
                             </IconButton>
                         }

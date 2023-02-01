@@ -11,17 +11,12 @@ export const favSlice = createSlice({
   name: "favs",
   initialState,
   reducers: {
-    addFav: (state, action) => {
-      if ([...state.favImages].every((fav) => fav.id !== action.payload.id)) {
-        state.favImages = [...state.favImages, action.payload];
-        setLocalStorage(state.favImages);
-      }
-    },
-    deleteFav: (state, action) => {
-      state.favImages = state.favImages.filter(
-        (fav) => fav.id !== action.payload
-      );
-      setLocalStorage(state.favImages);
+    toggleFav: (state,action) => {
+      const favPhoto = state.favImages.filter(fav => fav.id === action.payload.id)
+      favPhoto.length === 0
+      ? state.favImages = [...state.favImages, action.payload]
+      : state.favImages = state.favImages.filter(fav => fav.id !== action.payload.id)
+      setLocalStorage(state.favImages)
     },
     editFavDescription: (state, action) => {
       state.favImages = state.favImages.map((fav) => {
@@ -42,5 +37,5 @@ export const favSlice = createSlice({
 });
 
 export const selectFav = (state) => state.favImages
-export const { addFav, deleteFav, editFavDescription, orderFavorites } = favSlice.actions;
+export const { editFavDescription, orderFavorites, toggleFav } = favSlice.actions;
 export default favSlice.reducer;

@@ -15,6 +15,7 @@ useEffect(() => {
     <>
       <SearchBar />
       <ImageLists photos={photos}/>
+      
       </>
   );
 };

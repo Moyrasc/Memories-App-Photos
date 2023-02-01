@@ -8,7 +8,7 @@ const setLocalStorage = (image) => {
 };
 
 export const favSlice = createSlice({
-  name: "favs",
+  name: "favImages",
   initialState,
   reducers: {
     toggleFav: (state,action) => {
@@ -36,6 +36,6 @@ export const favSlice = createSlice({
   },
 });
 
-export const selectFav = (state) => state.favImages
+export const selectFav = (state) => state.favSlice.favImages
 export const { editFavDescription, orderFavorites, toggleFav } = favSlice.actions;
 export default favSlice.reducer;

@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
+import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
 
 
@@ -13,7 +14,8 @@ function App() {
       <Header />
       <main className="main-container">
         <Routes>
-          <Route path="/" element={<Home/>}></Route>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/favorites" element={<Favorites/>}/>
         </Routes>
         
         

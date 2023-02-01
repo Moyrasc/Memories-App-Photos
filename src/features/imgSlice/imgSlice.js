@@ -1,14 +1,14 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import apiCall from './apiCall'
+import getPhotos from './apiCall'
 
 const initialState = {
-    images: [],
+    results: [],
     status: 'null'
 }
 export const apiGetPhotos = createAsyncThunk(
-    'search/apiCall',
+    'search/getPhotos',
     async(query) => {
-        return await apiCall(query)
+        return await getPhotos(query)
     }
 
 )
@@ -22,7 +22,7 @@ export const imgSlice = createSlice({
         })
         .addCase(apiGetPhotos.fulfilled, (state,action) =>{
             state.status = 'fulfilled'
-            state.images = action.payload
+            state.results = action.payload
         })
         .addCase(apiGetPhotos.rejected, state =>{
             state.status = 'error'
@@ -30,6 +30,6 @@ export const imgSlice = createSlice({
     }
 })
 
-export const selectImage = (state) => state.apiCall.images
-export const selectStatusImage = (state) => state.apiCall.status
+export const selectImage = (state) => state.imgSlice.results
+export const selectStatusImage = (state) => state.apiGetPhotos.status
 export default imgSlice.reducer

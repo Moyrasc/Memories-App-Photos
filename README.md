@@ -2,7 +2,10 @@
 
 <img src="src\Img\preview memories.png" alt="preview-app">
 
-Aplicación de React, Redux, API Unplash y Sass.
+Aplicación de React, Redux, API Unplash. MUI y Sass.
+Diseño creado con Figma.
+
+# Descripción y Requisitos
 
 ## Descripción
 
@@ -19,7 +22,18 @@ El logotipo de la cámara le llevará siempre a la vista Home y el título le ll
 
 Podrá ordenarlas por tamaño, altura, ancho y fecha, además de filtrar las mismas por palabras clave que estén en la descripción
 
-## Tecnologías
+## Requisitos
+
+- Instalar create-react-app con la plantilla de Redux
+- Crear 2 slices, searchSlice y favouritesSlice
+searchSlice tendrá un thunk, para hacer la petición a la API de unsplash, favouritesSlice será totalmente síncrono.
+- Cuando se hace una búsqueda sin input (‘’) devolver una selección de fotos aleatorias, unsplash tiene esta funcionalidad.
+- Editar la descripción de las fotos favoritas en un modal, crear el modal fuera del bucle de fotos (photos.map())
+- No guardar todos los datos de unsplash, selecciona solo los datos necesarios
+- Solo reutilizar un componente si tiene sentido y no crea más problemas (e.g. el motor de búsqueda de las dos páginas) 
+
+
+# Tecnologías
 
 <a href="https://reactjs.org/">
     <img src="https://img.shields.io/badge/-REACT-000?style=for-the-badge&logo=react&logoColor=">
@@ -43,7 +57,8 @@ Podrá ordenarlas por tamaño, altura, ancho y fecha, además de filtrar las mis
     <img src="https://img.shields.io/badge/-BEM-000?style=for-the-badge&logo=bem&logoColor=">
 </a>
 
-## Scripts
+
+# Scripts
 
 En el directorio del proyecto, puedes ejecutar
 
@@ -54,6 +69,6 @@ Abre [http://localhost:3000](http://localhost:3000) para verla en tu navegador.
 
 La página se recargará cuando hagas cambios.\
 
-## Proyecto desplegado
+## 🚀 Proyecto desplegado
 
 - Github-pages : https://moyrasc.github.io/Memories-App-Photos/

@@ -6,6 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import { useDispatch} from "react-redux";
 import {  toggleFav } from "../../features/favSlice/favSlice";
+import DownloadIcon from '@mui/icons-material/Download';
 
 
 const ImageLists = ({photos}) => {
@@ -43,10 +44,15 @@ const ImageLists = ({photos}) => {
                     <ImageListItemBar
                         title={photo.title}
                         actionIcon={
-
-                            <IconButton onClick={()=>handleFavorite(photo)}>
-                                <StarBorderIcon style={{ color: "white" }} />
+                            <div>
+                            <IconButton>
+                                <DownloadIcon style={{color: "white"}}/>
                             </IconButton>
+                            <IconButton >
+                                
+                                <StarBorderIcon style={{ color: "white" }} onClick={()=>handleFavorite(photo)} />
+                            </IconButton>
+                        </div>
                         }
                     />
                 </ImageListItem>

@@ -4,8 +4,8 @@ import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import IconButton from "@mui/material/IconButton";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
-import { useDispatch} from "react-redux";
-import { editFavDescription, toggleFav } from "../../features/favSlice/favSlice";
+import { useDispatch, useSelector} from "react-redux";
+import { editFavDescription, selectFav, toggleFav } from "../../features/favSlice/favSlice";
 import DownloadIcon from '@mui/icons-material/Download';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -21,7 +21,6 @@ const style = {
   width: 400,
   bgcolor: 'background.paper',
   border: '1px solid #000',
-  
   boxShadow: 24,
   pt: 2,
   px: 4,
@@ -31,7 +30,7 @@ const ImageLists = ({ photos, isFav }) => {
     const dispatch = useDispatch()
     const [open, setOpen] = useState(false);
     const [selectPhoto, setSelectPhoto] = useState("")
-   
+    const myFavs = useSelector(selectFav)
 
     const handleOpen = (photo) => {
     setOpen(true);
@@ -62,6 +61,9 @@ const ImageLists = ({ photos, isFav }) => {
         dispatch(toggleFav(data))
 
     }
+    const iconFav = (photo) => {
+    if(myFavs.find(fav => fav.id === photo.id)) return 'red'
+  }
 
     return (
         <div>
@@ -87,7 +89,7 @@ const ImageLists = ({ photos, isFav }) => {
                                 </IconButton>
                                 <IconButton onClick={() => handleFavorite(photo)}>
 
-                                    <StarBorderIcon style={{ color: "white" }}  />
+                                    <StarBorderIcon style={{ color: iconFav(photo)|| "white" }}  />
                                 </IconButton>
                             </div>
                         }

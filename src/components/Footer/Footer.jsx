@@ -10,7 +10,7 @@ const Footer = () => {
             </div>
             <div className="footer_links">
                 <a href="mailto:noemisolac@gmail.com"><img src={iconGmail} alt="gmail icon" className="icon-gmail"/></a>
-                <a href="https://www.linkedin.com/in/noe-sola/"><img src={iconLinkedin} alt="Linkedin icon" className="icon-linkedin"/></a>
+                <a href="https://www.linkedin.com/in/noe-sola/" target="_blank" rel="noreferrer"><img src={iconLinkedin} alt="Linkedin icon" className="icon-linkedin"/></a>
             </div>
         </footer>
     )

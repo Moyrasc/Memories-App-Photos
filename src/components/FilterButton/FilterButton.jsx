@@ -26,13 +26,11 @@ const FilterButton =() => {
   return (
     <>
       <Box sx={{display: 'flex', justifyContent: 'center', gap: '24px', width: '100%', mt: 3}}>
-          <input style={{width: '40%'}}  type="text" placeholder='Find your photos...' value={inputValue} onChange={handleChangeValue}/>
-          <Box sx={{ width: '30%' }}>
-            <FormControl sx={{width: '100%'}}>
-                <InputLabel id="demo-simple-select-label">Sort By</InputLabel>
+          <input style={{width: '40%'}}  type="text" placeholder='Find your photos...' value={inputValue} onChange={handleChangeValue} className="input-search"/>
+          <Box sx={{ width: '25%' }}>
+            <FormControl sx={{width: '90%'}}>
+                <InputLabel>Order By</InputLabel>
                 <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
                 value={orderByValue}
                 label="orderBy"
                 onChange={handleChangeSelect}

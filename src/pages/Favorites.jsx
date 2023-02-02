@@ -12,7 +12,7 @@ const Favorites = () => {
   return (
     <>
     <FilterButton/>
-    <ImageLists photos={favsImages}/>
+    <ImageLists photos={favsImages} isFav/>
     </>
   )
 }

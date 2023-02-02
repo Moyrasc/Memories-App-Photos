@@ -5,7 +5,9 @@
 @import '../components/ImageList/ImageList.scss';
 
 .main-container{
-  display: block;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
   
   
 }

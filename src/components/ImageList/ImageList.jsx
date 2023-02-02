@@ -60,7 +60,8 @@ const ImageLists = ({ photos, isFav }) => {
     }
 
     return (
-        <ImageList sx={{ width: 320, height: 600 }}>
+        <div>
+        <ImageList sx={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 15rem),1fr)) !important' }} className="image-container">
 
             {photos.map((photo) => (
 
@@ -112,6 +113,7 @@ const ImageLists = ({ photos, isFav }) => {
             </Modal>
 
         </ImageList>
+        </div>
     );
 };
 

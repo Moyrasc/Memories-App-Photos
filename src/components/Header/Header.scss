@@ -30,3 +30,16 @@
                 cursor: pointer;
             }
 }
+
+@media only screen and (min-width:1000px){
+    .header {
+        .logo {
+            width: 90px;
+            height: 50px;
+        }
+        &_title-h1{
+            font-size: 1.9rem;
+        }
+    }
+  
+}

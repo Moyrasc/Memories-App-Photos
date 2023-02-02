@@ -11,6 +11,7 @@
         -moz-border-radius: 5px;
         -ms-border-radius: 5px;
         -o-border-radius: 5px;
+        opacity: 0.6;
     }
     .inputSearch {
         background-color: transparent;
@@ -18,7 +19,7 @@
         height: 25px;
         border: none;
         text-align: left;
-        opacity: 0.6;
+        
         &::placeholder {
             font-family: #{$font-text};
         }

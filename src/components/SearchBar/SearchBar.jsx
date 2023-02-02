@@ -25,6 +25,8 @@ const SearchBar = () => {
   return (
     <div className="input-container">
       <form onSubmit={handleSubmit}>
+        
+      <SearchSharpIcon className="input-icon"/>
       <input
         className="inputSearch"
         placeholder="Search photos"
@@ -33,8 +35,9 @@ const SearchBar = () => {
         onChange={e => setQueries(e.target.value)}
         onKeyDown={handleOnKeyDown}
       />
+  
       </form>
-      <SearchSharpIcon className="input-icon"/>
+      
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Favorites from "./pages/Favorites";
@@ -10,6 +10,7 @@ import "./styles/App.scss";
 
 function App() {
   return (
+    <HashRouter>
     <div className="App">
       <Header />
       <main className="main-container">
@@ -22,6 +23,7 @@ function App() {
       </main>
       <Footer />
     </div>
+    </HashRouter>
   );
 }
 

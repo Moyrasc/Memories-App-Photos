@@ -1,0 +1,15 @@
+
+.modal-container{
+    color: #{$black};
+    font-family: #{$font-text};
+    opacity: 0.8;
+    
+}
+.modal-textarea{
+    width: 250px;
+    border: none;
+    background-color: #{$cream};
+    font-size: 14px;
+    font-family: #{$font-text};
+
+}

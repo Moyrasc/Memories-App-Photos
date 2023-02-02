@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import FilterButton from '../components/FilterButton/FilterButton'
 import ImageLists from '../components/ImageList/ImageList'
 import { selectFav } from '../features/favSlice/favSlice'
 
@@ -9,8 +10,10 @@ const Favorites = () => {
     console.log(favsImages);
 
   return (
+    <>
+    <FilterButton/>
     <ImageLists photos={favsImages}/>
- 
+    </>
   )
 }
 

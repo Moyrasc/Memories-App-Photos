@@ -9,7 +9,7 @@ import {  toggleFav } from "../../features/favSlice/favSlice";
 import DownloadIcon from '@mui/icons-material/Download';
 
 
-const ImageLists = ({photos}) => {
+const ImageLists = ({photos,isFav}) => {
     const dispatch = useDispatch()
     const handleFavorite = (photo) => {
         const data = {

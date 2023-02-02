@@ -2,16 +2,29 @@
 @import '../components/Header/Header.scss';
 @import '../components/Footer/Footer.scss';
 @import '../components/SearchBar/SearchBar.scss';
-
-.main-container{
-  display: block;
-  
-  
+@import '../components/ImageList/ImageList.scss';
+@import '../components/FilterButton/FilterButton.scss';
+#root{
+height: 100%;
 }
 .App {
+  display: flex;
   text-align: center;
+  width: 100vw;
+  height: 100%;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  
   
 }
+
 
 
 

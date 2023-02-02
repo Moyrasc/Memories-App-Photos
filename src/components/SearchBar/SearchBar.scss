@@ -1,33 +1,100 @@
-.input-container{
+.input-container {
     position: relative;
     height: 30px;
-    .inputSearch{
-    background: #{$cream};
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    width: 250px;
-    height: 25px;
-    border: none;
-    text-align:center;
-    opacity: 0.6;
-    &::placeholder{
-        font-family: #{$font-text};
+    .inputSearch {
+        background: #{$cream};
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        width: 250px;
+        height: 25px;
+        border: none;
+        text-align: center;
+        opacity: 0.6;
+        &::placeholder {
+            font-family: #{$font-text};
+        }
     }
-}
-    .input-icon{
+    .input-icon {
         position: absolute;
         width: 20px;
         height: 20px;
         left: 50px;
-        bottom:-4px;
-        transform: translateY(-50%)    ;
+        bottom: -4px;
+        transform: translateY(-50%);
         -webkit-transform: translateY(-50%);
         -moz-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         -o-transform: translateY(-50%);
         color: grey;
+    }
 }
+
+
+@media only screen and (min-width: 375px) {
+    .input-container {
+        .inputSearch {
+            width: 320px;
+            height: 25px;
+            border: none;
+            text-align: center;
+        }
+        .input-icon {
+            left: 80px;
+        }
+    }
+}
+@media only screen and (min-width: 668px) {
+    .input-container {
+        .inputSearch {
+            width: 550px;
+            height: 25px;
+            border: none;
+            text-align: center;
+        }
+        .input-icon {
+            left: 150px;
+        }
+    }
+}
+@media only screen and (min-width: 868px) {
+    .input-container {
+        .inputSearch {
+            width: 690px;
+            height: 25px;
+            border: none;
+            text-align: center;
+        }
+        .input-icon {
+            left: 150px;
+        }
+    }
+}
+@media only screen and (min-width: 968px) {
+    .input-container {
+        .inputSearch {
+            width: 690px;
+            height: 25px;
+            border: none;
+            text-align: center;
+        }
+        .input-icon {
+            left: 250px;
+        }
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .input-container {
+        .inputSearch {
+            width: 690px;
+            height: 25px;
+            border: none;
+            text-align: center;
+        }
+        .input-icon {
+            left: 450px;
+        }
+    }
 }

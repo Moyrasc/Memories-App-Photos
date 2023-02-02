@@ -1,0 +1,25 @@
+
+.modal-container{
+    color: #{$black};
+    font-family: #{$font-text};
+    opacity: 0.8;
+    font-size: 14px;
+    &-p{
+        display: flex;
+        justify-content: space-between;
+    }
+    &-p1{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    
+}
+.modal-textarea{
+    width: 250px;
+    border: 1px solid #daa520;
+    background-color: #{$cream};
+    font-size: 14px;
+    font-family: #{$font-text};
+
+}

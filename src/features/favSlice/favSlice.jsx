@@ -8,20 +8,15 @@ const setLocalStorage = (image) => {
 };
 
 export const favSlice = createSlice({
-  name: "favs",
+  name: "favImages",
   initialState,
   reducers: {
-    addFav: (state, action) => {
-      if ([...state.favImages].every((fav) => fav.id !== action.payload.id)) {
-        state.favImages = [...state.favImages, action.payload];
-        setLocalStorage(state.favImages);
-      }
-    },
-    deleteFav: (state, action) => {
-      state.favImages = state.favImages.filter(
-        (fav) => fav.id !== action.payload
-      );
-      setLocalStorage(state.favImages);
+    toggleFav: (state,action) => {
+      const favPhoto = state.favImages.filter(fav => fav.id === action.payload.id)
+      favPhoto.length === 0
+      ? state.favImages = [...state.favImages, action.payload]
+      : state.favImages = state.favImages.filter(fav => fav.id !== action.payload.id)
+      setLocalStorage(state.favImages)
     },
     editFavDescription: (state, action) => {
       state.favImages = state.favImages.map((fav) => {
@@ -32,6 +27,14 @@ export const favSlice = createSlice({
       });
       setLocalStorage(state.favImages);
     },
+    searchDescription:(state,action) =>{
+      if(action.payload === ''){
+        state.favImages = JSON.parse(localStorage.getItem("favs"))
+      }else {
+        state.favImages = JSON.parse(localStorage.getItem("favs"))
+        state.favImages = state.favImages.filter(fav=> fav.description.toLowerCase().includes(action.payload.toLowerCase()))
+      }
+    },
     orderFavorites: (state, action) => {
       const favImages = state.favImages.sort(
         (a, b) => b[action.payload] - a[action.payload]
@@ -41,6 +44,6 @@ export const favSlice = createSlice({
   },
 });
 
-export const selectFav = (state) => state.favImages
-export const { addFav, deleteFav, editFavDescription, orderFavorites } = favSlice.actions;
+export const selectFav = (state) => state.favSlice.favImages
+export const { editFavDescription, orderFavorites, toggleFav, searchDescription } = favSlice.actions;
 export default favSlice.reducer;

@@ -3,7 +3,8 @@ import getPhotos from './apiCall'
 
 const initialState = {
     results: [],
-    status: 'null'
+    status: 'null',
+    term: ''
 }
 export const apiGetPhotos = createAsyncThunk(
     'search/getPhotos',

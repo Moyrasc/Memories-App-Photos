@@ -20,6 +20,25 @@
             font-family: #{$font-title};
             font-size: 1.7rem;
             letter-spacing: 1.2px;
+            
+        }
+        
+    }
+    a:-webkit-any-link{
+                text-decoration: none;
+                color: #{$black};
+                cursor: pointer;
+            }
+}
+
+@media only screen and (min-width:1000px){
+    .header {
+        .logo {
+            width: 90px;
+            height: 50px;
+        }
+        &_title-h1{
+            font-size: 1.9rem;
         }
     }
 }

@@ -1,6 +1,6 @@
-@import '../../styles/variables.scss';
+@import "../../styles/variables.scss";
 
-.footer{
+.footer {
     display: flex;
     justify-content: space-between;
     background-color: #{$cream};
@@ -11,19 +11,40 @@
         word-spacing: -0.2rem;
         margin-left: 0.8rem;
     }
-    &_links{
+    &_links {
         margin-top: 0.6rem;
         padding-right: 1.5rem;
-        .icon-gmail{
+        .icon-gmail {
             width: 25px;
             height: 25px;
             margin-right: 0.3rem;
-
         }
-        .icon-linkedin{
+        .icon-linkedin {
             width: 25px;
             height: 25px;
         }
     }
-    
+}
+
+@media only screen and (min-width: 1000px) {
+    .footer {
+        &_text-p {
+            font-size: 15px;
+            word-spacing: -0.2rem;
+            margin-left: 1rem;
+        }
+        &_links {
+            margin-top: 0.6rem;
+            padding-right: 2rem;
+            .icon-gmail {
+                width: 30px;
+                height: 30px;
+                margin-right: 0.6rem;
+            }
+            .icon-linkedin {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
 }

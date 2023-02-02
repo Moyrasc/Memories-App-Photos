@@ -4,13 +4,14 @@ import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import IconButton from "@mui/material/IconButton";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { editFavDescription, toggleFav } from "../../features/favSlice/favSlice";
 import DownloadIcon from '@mui/icons-material/Download';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 import { saveAs } from "file-saver";
+
 
 const style = {
   position: 'absolute',
@@ -55,7 +56,7 @@ const ImageLists = ({ photos, isFav }) => {
                 full: photo.urls.full,
                 thumb: photo.urls.thumb
             },
-            date: new Date().toGMTString()
+            date: new Date().toDateString()
         }
 
         dispatch(toggleFav(data))
@@ -102,17 +103,20 @@ const ImageLists = ({ photos, isFav }) => {
                 aria-describedby="parent-modal-description"
                 className="modal"
             >
-                <Box sx={{ ...style, width: 250, borderRadius: 5, bgcolor:'#F5DFC9'}} className="modal-container">
+                <Box sx={{ ...style, width: 280, borderRadius: 5, bgcolor:'#F5DFC9'}} className="modal-container">
                     <h2 id="parent-modal-title">My memories...</h2>
                     <TextareaAutosize
-                    value={selectPhoto.description} 
+                    value={selectPhoto.description || "Enter a description"} 
                     onChange={e => setSelectPhoto({...selectPhoto, description: e.target.value})}
                     className="modal-textarea" sx={{height: 50}}/>
-                    <p><strong>Date: </strong> {selectPhoto.date}</p>
-                    <p><strong>Likes:</strong>   {selectPhoto.likes}</p>
+                     <div className="modal-container-p">
+                    <p><strong>Date: </strong>{selectPhoto.date}</p>
+                    <p><strong>Likes: </strong>{selectPhoto.likes}</p>
+                    </div>
+                   <div className="modal-container-p1">
                     <p><strong>Width: </strong>{selectPhoto.width}</p>
                     <p><strong>Height: </strong> {selectPhoto.height}</p>
-                    
+                    </div>
                 </Box>
             </Modal>
             } 

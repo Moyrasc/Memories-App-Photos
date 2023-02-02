@@ -4,8 +4,8 @@ import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import IconButton from "@mui/material/IconButton";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
-import { useDispatch } from "react-redux";
-import { toggleFav } from "../../features/favSlice/favSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { editFavDescription, toggleFav } from "../../features/favSlice/favSlice";
 import DownloadIcon from '@mui/icons-material/Download';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -30,12 +30,15 @@ const ImageLists = ({ photos, isFav }) => {
     const dispatch = useDispatch()
     const [open, setOpen] = useState(false);
     const [selectPhoto, setSelectPhoto] = useState("")
+   
+
     const handleOpen = (photo) => {
     setOpen(true);
     setSelectPhoto(photo)
     };
     const handleClose = () => {
         setOpen(false);
+        dispatch(editFavDescription(selectPhoto))
     };
     const handleDownload = (url) => {
         saveAs(url);
@@ -102,7 +105,9 @@ const ImageLists = ({ photos, isFav }) => {
                 <Box sx={{ ...style, width: 250, borderRadius: 5, bgcolor:'#F5DFC9'}} className="modal-container">
                     <h2 id="parent-modal-title">My memories...</h2>
                     <TextareaAutosize
-                    placeholder={selectPhoto.description} className="modal-textarea" sx={{height: 50}}/>
+                    value={selectPhoto.description} 
+                    onChange={e => setSelectPhoto({...selectPhoto, description: e.target.value})}
+                    className="modal-textarea" sx={{height: 50}}/>
                     <p><strong>Date: </strong> {selectPhoto.date}</p>
                     <p><strong>Likes:</strong>   {selectPhoto.likes}</p>
                     <p><strong>Width: </strong>{selectPhoto.width}</p>

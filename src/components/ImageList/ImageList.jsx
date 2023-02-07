@@ -52,7 +52,7 @@ const ImageLists = ({ photos, isFav }) => {
             height: photo.height,
             likes: photo.likes,
             urls: {
-                full: photo.urls.full,
+                // full: photo.urls.full,
                 thumb: photo.urls.thumb
             },
             date: new Date().toDateString()

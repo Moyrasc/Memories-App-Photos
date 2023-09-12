@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Memories-App-Photos/static/css/main.63f17e3e.css",
-    "main.js": "/Memories-App-Photos/static/js/main.c187e8f0.js",
+    "main.css": "/Memories-App-Photos/static/css/main.6da317a2.css",
+    "main.js": "/Memories-App-Photos/static/js/main.ca6a86eb.js",
     "static/js/787.4723981e.chunk.js": "/Memories-App-Photos/static/js/787.4723981e.chunk.js",
     "static/media/bg.jpg": "/Memories-App-Photos/static/media/bg.f6932cea59212c64f5db.jpg",
     "static/media/logo__camera.png": "/Memories-App-Photos/static/media/logo__camera.9faecd10d376f5c6d3e6.png",
     "index.html": "/Memories-App-Photos/index.html",
-    "main.63f17e3e.css.map": "/Memories-App-Photos/static/css/main.63f17e3e.css.map",
-    "main.c187e8f0.js.map": "/Memories-App-Photos/static/js/main.c187e8f0.js.map",
+    "main.6da317a2.css.map": "/Memories-App-Photos/static/css/main.6da317a2.css.map",
+    "main.ca6a86eb.js.map": "/Memories-App-Photos/static/js/main.ca6a86eb.js.map",
     "787.4723981e.chunk.js.map": "/Memories-App-Photos/static/js/787.4723981e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.63f17e3e.css",
-    "static/js/main.c187e8f0.js"
+    "static/css/main.6da317a2.css",
+    "static/js/main.ca6a86eb.js"
   ]
 }

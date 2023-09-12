@@ -9,7 +9,7 @@ import { editFavDescription, selectFav, toggleFav } from "../../features/favSlic
 import DownloadIcon from '@mui/icons-material/Download';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import TextareaAutosize from '@mui/base/TextareaAutosize';
+import {TextareaAutosize} from '@mui/base/TextareaAutosize';
 import { saveAs } from "file-saver";
 
 
@@ -53,7 +53,7 @@ const ImageLists = ({ photos, isFav }) => {
             likes: photo.likes,
             urls: {
                 // full: photo.urls.full,
-                thumb: photo.urls.thumb
+                small: photo.urls.small
             },
             date: new Date().toDateString()
         }
@@ -73,8 +73,8 @@ const ImageLists = ({ photos, isFav }) => {
 
                 <ImageListItem key={photo.id}>
                     <img
-                        src={`${photo.urls.thumb}`}
-                        srcSet={`${photo.urls.thumb}`}
+                        src={`${photo.urls.small}`}
+                        srcSet={`${photo.urls.small}`}
                         alt={photo.alt_description}
                         loading="lazy"
                         onClick={()=>handleOpen(photo)}

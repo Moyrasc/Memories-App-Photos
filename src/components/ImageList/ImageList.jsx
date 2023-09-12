@@ -73,8 +73,8 @@ const ImageLists = ({ photos, isFav }) => {
 
                 <ImageListItem key={photo.id}>
                     <img
-                        src={`${photo.urls.thumb}?w=248&fit=crop&auto=format`}
-                        srcSet={`${photo.urls.thumb}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                        src={`${photo.urls.thumb}`}
+                        srcSet={`${photo.urls.thumb}`}
                         alt={photo.alt_description}
                         loading="lazy"
                         onClick={()=>handleOpen(photo)}
